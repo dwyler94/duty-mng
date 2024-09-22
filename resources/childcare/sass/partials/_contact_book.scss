@@ -1,0 +1,318 @@
+.form-control-temp {
+    max-width: 4rem;
+    min-width: 4rem;
+    padding: 0.25rem;
+}
+
+.contact-book-cell {
+    align-items: center;
+    border: 1px solid white;
+    display: flex;
+    justify-content: center;
+    min-height: 50px;
+    padding: 0.25rem 0.5rem;
+    word-break: break-all;
+
+    .custom-radio-group {
+        width: 100%;
+    }
+
+    .home-minute-input-wrapper {
+        justify-content: center;
+
+        .home-minute-input .form-control.is-invalid {
+            background-image: none;
+            padding-right: 0.75rem;
+        }
+    }
+}
+
+.contact-area {
+    height: 300px;
+    white-space: pre-wrap;
+    overflow: overlay; // 枠内に収まる場合
+
+    textarea {
+        min-height:268px;
+    }
+}
+
+.time-zone-label {
+    background-color: rgb(217, 225, 242);
+    color: #555;
+    height: auto;
+}
+
+@include pc {
+    .error-top {
+        display: none;
+    }
+    .contact-book-click {
+        position:relative;
+        height:25px;
+        width: 110px;
+    }
+
+    .contactbook-td-temp {
+        width: 120px;
+        > div {
+            width: fit-content;
+        }
+
+    }
+
+    .contactbook-td-defecation {
+        width: 100px;
+    }
+
+    .row.row-mobile {
+        margin-right: 0px;
+    }
+
+    .table-input-temp {
+        width: 4rem;
+    }
+
+    .guardian-input-area {
+        .guardian-input-temp {
+            align-items: center;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+
+            input {
+                padding-left: 0;
+                padding-right: 0;
+                width: 5rem;
+            }
+        }
+    }
+}
+
+@include mobile {
+    .btn-add, .btn-del {
+        width: 5rem;
+    }
+
+    #contactbook {
+        overflow-x: hidden;
+
+        > table {
+            width: 100%;
+        }
+
+        th {
+            padding: 0.4rem 0;
+        }
+    }
+
+    .contact-book-cell.time-zone-label {
+        min-height: 1rem;
+        padding: 0;
+    }
+
+    .contact-book-cell {
+       .home-minute-input-wrapper {
+            .home-minute-input .form-control.is-invalid {
+                min-width: 3.5rem;
+                padding-left: 0;
+                padding-right: 0;
+            }
+        }
+
+        .form-control-temp.form-control.is-invalid {
+            background-image: none;
+            min-width: 3.5rem;
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+    }
+
+    .contact-book-click {
+        position: relative;
+        width: 46px;
+    }
+
+   .contactbook-td-temp input.is-invalid {
+        min-width: 5.0rem;
+   }
+
+
+    .error-top {
+        display: flex;
+        justify-content: center;
+        margin: -40px 0 20px;
+    }
+
+    .fixed-btn-group {
+        bottom: 0;
+        display: flex;
+        left: 0;
+        position: fixed;
+        width: 100%;
+        z-index: 12;
+
+        > button {
+            border-radius: 0;
+            font-size: 18px;
+            justify-content: center;
+            letter-spacing: 3px;
+            padding: 5px 0;
+            position: relative;
+            width: 100%;
+        }
+
+        > button:not(:last-child)::after {
+            background-color: #fff;
+            content: "";
+            height: 100%;
+            left: 100%;
+            position: absolute;
+            top: 0;
+            width: 2px;
+        }
+    }
+
+    // 0歳児保護者上部部分
+    .guardian-input-area {
+        .home-minute-input-wrapper {
+            justify-content: center;
+
+            .home-minute-input .form-control.is-invalid {
+                background-image: none;
+                min-width: 3.5rem;
+                padding-left: 0;
+                padding-right: 0;
+            }
+        }
+
+        .guardian-input-temp {
+            align-items: center;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding-left: 0;
+            padding-right: 0;
+            width: 5.5rem;
+
+            input {
+                width: 3.0rem;
+                padding-left: 0;
+                padding-right: 0;
+            }
+        }
+
+        .guardian-input-pickup {
+            align-items: center;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+
+            .invalid-feedback {
+                text-align: center;
+            }
+        }
+
+        .form-control.is-invalid {
+            background-image: none;
+            min-width: 3.5rem;
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+
+    .has-fixed-btn {
+        padding-bottom: 60px;
+    }
+
+    .mobile-tab-group {
+        display: flex;
+
+        .mobile-tab {
+            background-color: #f0f0f0;
+            border-radius: 6px 6px 0 0;
+            margin-bottom: 0.5px;
+            padding: 0.5rem 0;
+            text-align: center;
+            width: 100%;
+
+            &.parent {
+                border-bottom: #ebcb42 3px solid;
+                color: #8bb3fc;
+
+                &.active {
+                    background-color: #8bb3fc;
+                    border-bottom: none;
+                    color: #fff;
+                }
+            }
+
+            &.school {
+                border-bottom: #8bb3fc 3px solid;
+                color: #ebcb42;
+
+                &.active {
+                    background-color: #ebcb42;
+                    border-bottom: none;
+                    color: #fff;
+                }
+            }
+
+            &.base {
+                border-bottom: #8bb3fc 3px solid;
+                color: $wood-brown;
+
+                &.active {
+                    background-color: $wood-brown;
+                    border-bottom: none;
+                    color: #fff;
+                }
+            }
+
+            &.active-school {
+                border-bottom: #ebcb42 3px solid;
+            }
+
+            &.active-parent {
+                border-bottom: #8bb3fc 3px solid;
+            }
+
+            &.active-base {
+                border-bottom: $wood-brown 3px solid;
+            }
+
+        }
+    }
+
+    .row.row-mobile {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+
+    .table-input {
+        height: 25px;
+
+        &-temp {
+            width: 3rem;
+        }
+
+        &-memo {
+            text-overflow: ellipsis;
+
+        }
+    }
+
+    select.table-input {
+        padding: 0;
+    }
+
+    .white-l-border-2 {
+        border-left: none;
+    }
+
+    .white-lb-border-2 {
+        border-left: none;
+        border-bottom: 2px solid white;
+    }
+}
